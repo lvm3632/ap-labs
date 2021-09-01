@@ -52,7 +52,6 @@ int main(int argc, char **argv) {
         printf("./calculator mult 1 2 3 4 5\n");
         return -1;
     }
-
   
     int arrSize = len-2;
     int *arr_numbers;
@@ -73,15 +72,47 @@ int main(int argc, char **argv) {
     if(strcmp(operator,"add")==0){
         int sum = 1;
         res = calc(sum,arrSize,arr_numbers);
+        for(int i=0;i<arrSize;i++){
+            char str_b[50];
+            int b = arr_numbers[i];
+            sprintf(str_b,"%d",b); 
+            if(i==arrSize-1){
+                printf("%s", str_b);
+                printf(" = ");
+            }else{
+                printf("%s + ", str_b);
+            }
+        }
         printf("%ld",res);
-
     }else if(strcmp(operator,"sub")==0){
         int sub = 2;
         res = calc(sub,arrSize,arr_numbers);
+        for(int i=0;i<arrSize;i++){
+            char str_b[50];
+            int b = arr_numbers[i];
+            sprintf(str_b,"%d",b); 
+            if(i==arrSize-1){
+                printf("%s", str_b);
+                printf(" = ");
+            }else{
+                printf("%s - ", str_b);
+            }
+        }
         printf("%ld",res);
     }else if(strcmp(operator,"mult")==0){
         int mult = 3;
         res = calc(mult,arrSize,arr_numbers);
+        for(int i=0;i<arrSize;i++){
+            char str_b[50];
+            int b = arr_numbers[i];
+            sprintf(str_b,"%d",b); 
+            if(i==arrSize-1){
+                printf("%s", str_b);
+                printf(" = ");
+            }else{
+                printf("%s * ", str_b);
+            }
+        }
         printf("%ld",res);
 
     }else{
@@ -90,7 +121,6 @@ int main(int argc, char **argv) {
         printf("./calculator <operator> <numbers separated by space>\n");
         return -1;
     }
-
     printf("\n");
     return 0;
    

@@ -66,11 +66,55 @@ func main() {
 		operator := argVector[1]
 
 		if operator == "add" {
-			fmt.Printf("%d\n", calc(1, arr_numbers))
+
+			res := calc(1, arr_numbers)
+
+			for i := 0; i < len; i++ {
+				num := arr_numbers[i]
+				concatenated := fmt.Sprintf("%d", num)
+				if i == len-1 {
+					fmt.Printf("%s", concatenated)
+					fmt.Printf(" = ")
+				} else {
+					fmt.Printf("%s + ", concatenated)
+				}
+			}
+
+			fmt.Printf("%d", res)
+			fmt.Printf("\n")
+
 		} else if operator == "sub" {
-			fmt.Printf("%d\n", calc(2, arr_numbers))
+			res := calc(2, arr_numbers)
+
+			for i := 0; i < len; i++ {
+				num := arr_numbers[i]
+				concatenated := fmt.Sprintf("%d", num)
+				if i == len-1 {
+					fmt.Printf("%s", concatenated)
+					fmt.Printf(" = ")
+				} else {
+					fmt.Printf("%s - ", concatenated)
+				}
+			}
+
+			fmt.Printf("%d", res)
+			fmt.Printf("\n")
 		} else if operator == "mult" {
-			fmt.Printf("%d\n", calc(3, arr_numbers))
+			res := calc(3, arr_numbers)
+
+			for i := 0; i < len; i++ {
+				num := arr_numbers[i]
+				concatenated := fmt.Sprintf("%d", num)
+				if i == len-1 {
+					fmt.Printf("%s", concatenated)
+					fmt.Printf(" = ")
+				} else {
+					fmt.Printf("%s * ", concatenated)
+				}
+			}
+
+			fmt.Printf("%d", res)
+			fmt.Printf("\n")
 		} else {
 
 			fmt.Printf("Expresión inválida, el programa solo soporta: add, sub y mult y/o parámetros pueden ser inválidos \n")

@@ -17,7 +17,7 @@ func writingTime(socket net.Conn, city string) {
 			log.Fatal(err)
 			os.Exit(1)
 		}
-		fmt.Printf("\r (%s) : %s", city, event)
+		fmt.Printf("(%s) : %s", city, event)
 	}
 }
 func main() {

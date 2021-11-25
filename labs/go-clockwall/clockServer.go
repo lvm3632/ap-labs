@@ -13,17 +13,20 @@ import (
 )
 
 func handleConn(timeZone string, c net.Conn) {
-
+	formatTimeZone, _ := time.LoadLocation(timeZone)
 	defer c.Close()
 	for {
-		_, err2 := io.WriteString(c, timeZone+" : ")
+
+		_, err2 := io.WriteString(c, timeZone+" - ")
 		if err2 != nil {
 			return // e.g., client disconnected
 		}
-		_, err := io.WriteString(c, time.Now().Format("15:04:05\n"))
+
+		_, err := io.WriteString(c, time.Now().In(formatTimeZone).Format("15:04:05\n"))
 		if err != nil {
 			return // e.g., client disconnected
 		}
+
 		time.Sleep(1 * time.Second)
 	}
 }

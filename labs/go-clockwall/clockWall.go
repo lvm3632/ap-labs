@@ -29,6 +29,7 @@ func main() {
 		fmt.Println("Please provide more than one parameter")
 		fmt.Println("Example: go run clockWall.go <city>=localhost:<port> <city>=localhost:<port> ...")
 		fmt.Println("This program can support at least 3 clock servers.")
+		return
 	}
 	localhosts := make([]string, argc)
 	cities := make([]string, argc)
